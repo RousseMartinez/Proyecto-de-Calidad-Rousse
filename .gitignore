@@ -22,3 +22,8 @@ Homestead.json
 /.vagrant
 .phpunit.result.cache
 database/seeders/UserSeeder.php
+
+# Vite
+/public/build/
+/public/storage
+resources/js/ziggy.js

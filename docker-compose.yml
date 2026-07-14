@@ -1,0 +1,61 @@
+services:
+
+  app:
+
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+
+    container_name: petcare-app
+
+    working_dir: /var/www
+
+    volumes:
+      - ./:/var/www
+
+    depends_on:
+      - mysql
+
+  nginx:
+
+    image: nginx:latest
+
+    container_name: petcare-nginx
+
+    ports:
+      - "8000:80"
+
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+
+    depends_on:
+      - app
+
+  mysql:
+
+    image: mysql:8.0
+
+    container_name: petcare-mysql
+
+    restart: always
+
+    environment:
+
+      MYSQL_DATABASE: petcare
+
+      MYSQL_ROOT_PASSWORD: root
+
+      MYSQL_USER: petcare
+
+      MYSQL_PASSWORD: petcare
+
+    ports:
+      - "3307:3306"
+
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+
+  mysql-data:
