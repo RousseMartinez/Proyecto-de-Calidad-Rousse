@@ -2,9 +2,15 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev": "vite",
-        "build": "vite build"
-    },
+    "dev": "vite",
+    "build": "vite build",
+
+    "test:unit": "php artisan test --testsuite=Unit",
+
+    "test:integration": "php artisan test --testsuite=Feature",
+
+    "test:e2e": "playwright test"
+},
     "devDependencies": {
         "@inertiajs/vue3": "^1.0.0",
         "@tailwindcss/forms": "^0.5.2",
