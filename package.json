@@ -2,17 +2,15 @@
     "private": true,
     "type": "module",
     "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-
-    "test:unit": "php artisan test --testsuite=Unit",
-
-    "test:integration": "php artisan test --testsuite=Feature",
-
-    "test:e2e": "playwright test"
-},
+        "dev": "vite",
+        "build": "vite build",
+        "test:unit": "php artisan test --testsuite=Unit",
+        "test:integration": "php artisan test --testsuite=Feature",
+        "test:e2e": "playwright test"
+    },
     "devDependencies": {
         "@inertiajs/vue3": "^1.0.0",
+        "@playwright/test": "^1.61.1",
         "@tailwindcss/forms": "^0.5.2",
         "@tailwindcss/typography": "^0.5.2",
         "@vitejs/plugin-vue": "^4.0.0",
