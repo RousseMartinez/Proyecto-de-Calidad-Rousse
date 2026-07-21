@@ -27,3 +27,8 @@ database/seeders/UserSeeder.php
 /public/build/
 /public/storage
 resources/js/ziggy.js
+
+/coverage/
+/.phpunit.cache/
+/playwright-report/
+/test-results/
